@@ -1,69 +1,39 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@layer base {
+  .asset-card {
+    @apply relative w-[300px] h-fit bg-[#1a1e33] rounded-2xl border-[1px] border-[#252b47] flex flex-col gap-2 p-4 pt-0 mt-14;
   }
-  a:hover {
-    color: #747bff;
+  .asset-card::before {
+    @apply content-[""] block w-1/2 aspect-[2/1] rounded-b-full mx-auto bg-[#14172b] border-[1px] border-[#252b47] border-t-0 mt-[-1px] mb-2;
   }
-  button {
-    background-color: #f9f9f9;
+  .asset-card > img {
+    @apply p-5 w-[35%] aspect-square bg-[#20212c] rounded-full absolute -top-[25%] left-1/2 -translate-x-1/2 translate-y-[25%];
+  }
+  .asset-card > .price-box {
+    @apply bg-[#14172b] rounded-2xl p-2 w-full mx-auto text-white font-semibold text-center;
+  }
+  .asset-card > .price-box span {
+    @apply text-sm;
+  }
+  .profit {
+    @apply text-green-400;
+  }
+  .loss {
+    @apply text-red-400;
+  }
+  .asset-card h6 {
+    @apply text-center text-[#6a72a2] font-medium text-base;
+  }
+  .asset-card p {
+    @apply text-center text-[#535875] font-medium text-sm;
+  }
+  .asset-card .popular-pairs {
+    @apply flex gap-2 w-fit mx-auto bg-[#14172b] p-2 rounded-2xl;
+  }
+  .asset-card .popular-pairs img {
+    @apply w-[20px] aspect-square rounded-full;
   }
 }
