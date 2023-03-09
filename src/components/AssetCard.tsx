@@ -19,6 +19,7 @@ const AssetCard = ({
 }: AssetCardProps) => {
   return (
     <div className="asset-card">
+      <div className="circle"></div>
       <img src={icon} alt={name} />
       <h6>{name}</h6>
       <div className="price-box">

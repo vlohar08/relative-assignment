@@ -6,11 +6,17 @@
   .asset-card {
     @apply relative w-[300px] h-fit bg-[#1a1e33] rounded-2xl border-[1px] border-[#252b47] flex flex-col gap-2 p-4 pt-0 mt-14;
   }
-  .asset-card::before {
-    @apply content-[""] block w-1/2 aspect-[2/1] rounded-b-full mx-auto bg-[#14172b] border-[1px] border-[#252b47] border-t-0 mt-[-1px] mb-2;
+  .asset-card .circle {
+    @apply relative w-[120px] h-[70px] mx-auto rounded-b-[60px] bg-[#14172b] border-b-[1px] border-x-[1px] border-[#252b47] shadow-[#14172b_0_-8px_0px_0px];
+  }
+  .asset-card .circle::before {
+    @apply absolute content-[''] w-[30px] h-6 bg-[#1a1e33] border-t-[1px] border-r-[1px] border-[#252b47] rounded-tr-full -top-[1px] -left-[29px] shadow-[#14172b_8px_-8px_0px_8px];
+  }
+  .asset-card .circle::after {
+    @apply absolute content-[''] w-[30px] h-6 bg-[#1a1e33] border-t-[1px] border-l-[1px] border-[#252b47] rounded-tl-full -top-[1px] -right-[29px] shadow-[#14172b_-8px_-8px_0px_8px];
   }
   .asset-card > img {
-    @apply p-5 w-[35%] aspect-square bg-[#20212c] rounded-full absolute -top-[25%] left-1/2 -translate-x-1/2 translate-y-[25%];
+    @apply p-5 w-[35%] aspect-square bg-[#20212c] rounded-full absolute -top-[20%] left-1/2 -translate-x-1/2 translate-y-[25%];
   }
   .asset-card > .price-box {
     @apply bg-[#14172b] rounded-2xl p-2 w-full mx-auto text-white font-semibold text-center;
